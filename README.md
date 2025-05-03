@@ -5,7 +5,7 @@
 
 ------------------------------------------
 
-BE - SpringBoot, FE - NEXT.js
+BE - SpringBoot, FE - NEXT.js, TypeScript
 
 java : openjdk 17
 
