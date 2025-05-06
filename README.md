@@ -17,5 +17,5 @@ OS : Linux Ubuntu
 
 AWS : EC2(ubuntu), RDB(MY SQL)
 
-
+etc : IntelliJ
 
