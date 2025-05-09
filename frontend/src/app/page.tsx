@@ -2,8 +2,8 @@
 'use client'; // Client Component임을 명시
 
 // useCallback 훅을 임포트합니다.
-import { useEffect, useState, useCallback } from 'react'; // <-- useCallback 추가
-import Head from 'next/head'; // 필요하다면 사용 (layout.tsx에 Head가 있다면 불필요)
+import { useEffect, useState, useCallback } from 'react';
+// import Head from 'next/head'; // <-- 이 줄을 삭제합니다.
 
 // 사용할 레이아웃 컴포넌트들을 임포트
 import Header from '../components/Header/Header';
@@ -16,12 +16,10 @@ import HomeContent from '../components/HomeContent/HomeContent'; // 메인 섹�
 export default function Home() {
   const [message, setMessage] = useState<string | null>('Loading...');
 
-  // fetchMessage 함수를 useCallback으로 감싸서 메모이제이션합니다.
-  // 이 함수는 외부의 어떤 상태나 props에도 의존하지 않으므로, 의존성 배열은 비워둡니다 ([])
   const fetchMessage = useCallback(async () => {
     try {
       const apiUrl = 'http://ec2-13-209-68-67.ap-northeast-2.compute.amazonaws.com:8080/common/hello';
-      console.log(`Workspaceing from: ${apiUrl}`); // 오타 수정 및 명확하게 'Fetching'으로 변경
+      console.log(`Workspaceing from: ${apiUrl}`);
 
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -40,18 +38,16 @@ export default function Home() {
         }
         setMessage(errorMessage);
       }
-  }, []); // <-- useCallback의 의존성 배열: 이 함수가 의존하는 값들이 없으므로 빈 배열
+  }, []);
 
   useEffect(() => {
-    // useCallback으로 안정화된 fetchMessage 함수를 호출합니다.
     fetchMessage();
-    // useEffect의 의존성 배열에 안정화된 fetchMessage 함수를 넣어줍니다.
-    // fetchMessage 함수는 useCallback 덕분에 안정적이므로 무한 루프를 유발하지 않습니다.
-  }, [fetchMessage]); // <-- useEffect의 의존성 배열: fetchMessage 함수가 변경될 때마다 (하지만 useCallback 덕분에 거의 변경되지 않음) 실행
+  }, [fetchMessage]);
 
   return (
     <>
       {/* layout.tsx에 <Head>가 있다면 여기서 중복 정의 피하기 */}
+      {/* <Head> 이 부분을 주석 처리 해두었으므로 Head 임포트는 삭제합니다. */}
       {/* <Head>
         <title>챗봇 서비스</title>
         <meta name="description" content="우리의 챗봇 서비스를 만나보세요" />
