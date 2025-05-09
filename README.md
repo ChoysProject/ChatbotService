@@ -19,3 +19,4 @@ AWS : EC2(ubuntu), RDB(MY SQL)
 
 etc : IntelliJ
 
+![image](https://github.com/user-attachments/assets/90bafaf6-54f3-4309-9fef-3dde0c677132)
