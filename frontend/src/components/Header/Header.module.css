@@ -1,0 +1,61 @@
+/* src/components/Header/Header.module.css */
+
+.siteHeader {
+    background-color: #ff9900; /* 이미지 상단 주황색 */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* .container는 globals.css에 있음 */
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between; /* 로고와 네비게이션을 양 끝으로 분배 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navLinks li {
+    margin-left: 20px;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: #ffe0b2; /* 호버 시 색상 변경 */
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .headerContainer {
+        flex-direction: column; /* 헤더 세로 정렬 */
+        align-items: flex-start;
+    }
+
+    .navLinks {
+        margin-top: 10px;
+    }
+
+    .navLinks li {
+        margin-left: 0;
+        margin-right: 15px; /* 간격 조정 */
+    }
+}

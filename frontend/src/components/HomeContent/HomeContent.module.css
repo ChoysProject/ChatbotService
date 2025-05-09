@@ -1,0 +1,204 @@
+/* src/components/HomeContent/HomeContent.module.css */
+
+/* 섹션 공통 스타일 */
+.section {
+    padding: 60px 0; /* 상하 패딩 */
+}
+
+.sectionEasy {
+     background-color: #ffffff; /* 배경색 */
+     padding-top: 40px; /* 이미지 참고 상단 패딩 조절 */
+     padding-bottom: 40px;
+}
+
+.sectionCustom {
+     padding-top: 40px;
+     padding-bottom: 60px;
+}
+
+/* 플렉스 컨테이너 (가로 배치용) */
+.flexContainer {
+    display: flex;
+    gap: 40px; /* 요소들 사이의 간격 */
+    flex-wrap: wrap; /* 화면이 좁아지면 자동으로 줄바꿈 */
+}
+
+.alignCenter {
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.spaceBetween {
+    justify-content: space-between; /* 양 끝 정렬 */
+}
+
+/* 첫 번째 섹션 내부 요소 */
+.textControl {
+    flex: 1; /* 남은 공간을 채우도록 설정 */
+    min-width: 300px; /* 최소 너비 설정 (줄바꿈 방지) */
+    margin-right: 40px; /* 이미지 참고 오른쪽 여백 */
+}
+
+.textControl h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff9900; /* 이미지 참고 밑줄 */
+    display: inline-block; /* 밑줄 너비를 텍스트 너비에 맞춤 */
+    padding-bottom: 5px;
+}
+
+.textControl p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.largePlaceholder {
+    flex: 1.5; /* 텍스트 영역보다 더 넓게 설정 */
+    background-color: #eee; /* 회색 배경 */
+    border: 2px dashed #ccc; /* 점선 테두리 */
+    min-height: 400px; /* 최소 높이 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    box-sizing: border-box; /* 패딩/보더를 너비에 포함 */
+}
+
+
+/* 두 번째 섹션 내부 요소 */
+.sectionHeading { /* 클래스 이름 변경 */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* 여기에 API 메시지 영역 스타일 추가 */
+.apiMessageArea {
+    text-align: center;
+    margin: 20px auto 40px auto; /* 상하 여백, 가운데 정렬 */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eef; /* 연한 파란색 배경 */
+    max-width: 600px; /* 너비 제한 */
+    font-size: 1em;
+    color: #333;
+}
+
+.apiMessageArea p {
+    margin: 0; /* 내부 p 태그 마진 제거 */
+}
+
+
+.contentBlock {
+    flex: 1; /* 공간 균등 분배 */
+    min-width: 300px; /* 최소 너비 */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 그림자 효과 */
+    display: flex;
+    flex-direction: column; /* 내부 요소를 세로로 정렬 */
+}
+
+.blockHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.blockTitle { /* 클래스 이름 변경 */
+     font-size: 1.3em;
+     color: #333;
+     margin: 0;
+     display: flex;
+     align-items: center;
+}
+
+.blockHeader .icon {
+    margin-right: 8px; /* 아이콘과 텍스트 사이 간격 */
+    font-size: 1.2em; /* 아이콘 크기 조절 */
+}
+
+.blockText { /* 클래스 이름 변경 */
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* 내용이 많아도 placeholder 위치가 고정되도록 */
+}
+
+.smallPlaceholder {
+    width: 100%; /* 블록 너비에 맞춤 */
+    /* height: 200px; 이미지 참고 높이 */
+    aspect-ratio: 16 / 9; /* 일반적인 비디오/이미지 비율 */
+    background-color: #eee;
+    border: 1px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    box-sizing: border-box;
+}
+
+
+/* 버튼 스타일 */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.outlineButton {
+    background-color: transparent; /* 투명 배경 */
+    color: #ff9900; /* 주황색 글자색 */
+    border: 2px solid #ff9900; /* 주황색 테두리 */
+}
+
+.outlineButton:hover {
+    background-color: #ff9900; /* 호버 시 배경색 채움 */
+    color: white; /* 호버 시 글자색 변경 */
+}
+
+.filledButton {
+    background-color: #ff9900; /* 주황색 배경 */
+    color: white; /* 흰색 글자색 */
+    border: 2px solid #ff9900; /* 주황색 테두리 (호버 시 일관성 위해) */
+}
+
+.filledButton:hover {
+    background-color: #e68a00; /* 호버 시 약간 어두운 주황색 */
+}
+
+
+/* 반응형 기본 설정 */
+@media (max-width: 768px) {
+    /* .container 스타일은 globals.css에 있으므로 여기서 수정하지 않음 */
+
+    .flexContainer {
+        flex-direction: column; /* 플렉스 아이템 세로 정렬 */
+        gap: 30px; /* 세로 간격 */
+    }
+
+    .textControl {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+     .largePlaceholder,
+     .contentBlock {
+        min-width: auto; /* 최소 너비 재설정 */
+     }
+}

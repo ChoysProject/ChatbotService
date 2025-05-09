@@ -1,0 +1,11 @@
+/* src/components/Footer/Footer.module.css */
+
+.siteFooter {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    /* 푸터 하단 고정 시 필요 */
+    /* margin-top: auto; */
+}
